@@ -4,17 +4,17 @@ my_app: "앱키"
 my_sec: "앱키 시크릿"
 
 #모의투자
-paper_app: "모의투자 앱키"
-paper_sec: "모의투자 앱키 시크릿"
+paper_app: "PSNtrKryscW80ZpgefugKhAa2qEzCrgg2ugg"
+paper_sec: "hiY1yyv9Q9teOoS7yAUBvSV+Yo/lN+J9BI7mgFOHqLVWlORzS5luobVuGRAPaNdrvpIqdU5GLpdkNGm9aclD0qc9VbQoi27nn49T0+cvO5RUhkyksmZoC4LiZ7D5GfnoPUfF+/DkDb0FHw2bwmyZLDs7kiZ7Gn26ESJtwfru5JViLNuDycg="
 
 # HTS ID
-my_htsid: "사용자 HTS ID"
+my_htsid: "ded06119"
 
 #계좌번호 앞 8자리
 my_acct_stock: "증권계좌 8자리"
 my_acct_future: "선물옵션계좌 8자리"
-my_paper_stock: "모의투자 증권계좌 8자리"
-my_paper_future: "모의투자 선물옵션계좌 8자리"
+my_paper_stock: "50194171"
+my_paper_future: "60045032"
 
 #계좌번호 뒤 2자리
 my_prod: "01" # 종합계좌
