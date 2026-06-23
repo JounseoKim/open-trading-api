@@ -1,7 +1,7 @@
 import requests
 import json
 import time
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 # ==========================================
 # 1. 기본 설정
@@ -51,21 +51,24 @@ def buy_market_order():
     res = requests.post(url, headers=headers, data=payload)
     return res.json()
 
+KST = timezone(timedelta(hours=9))
+
 # ==========================================
 # 4. 메인 자동매매 무한 루프 실행
 # ==========================================
 print("=== 🚀 자동매매 봇 가동을 시작합니다 ===")
-
-while True:
+try:
+  while True:
     try:
         # 현재 시간과 주가 확인
-        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        now = datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S")
         current_price = get_current_price()
         print(f"[{now}] 삼성전자 현재가: {current_price}원 (목표가: {TARGET_PRICE}원)")
 
         # 매수 조건 판단
         if current_price <= TARGET_PRICE:
             print(">>> 🚨 목표가 도달! 매수 주문을 실행합니다.")
+
             result = buy_market_order()
             
             if result['rt_cd'] == '0':
@@ -82,3 +85,5 @@ while True:
     except Exception as e:
         print(f"시스템 에러 발생: {e}")
         time.sleep(1)
+except KeyboardInterrupt:
+    print("\n>>> 🛑 사용자에 의해 프로그램이 종료되었습니다.")
