@@ -1,0 +1,14 @@
+price = get_current_price("005930")
+print(f"삼성전자 현재가: {price:,}원")
+
+
+print_balance()
+
+
+buy_limit_order("005930", 70000, 1)
+
+
+sell_limit_order("005930", 80000, 1)
+
+
+run_auto_trader(symbol="005930", buy_target=70000, sell_target=80000, qty=1, poll_sec=2, max_hold_min=60)
